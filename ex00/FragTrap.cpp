@@ -6,7 +6,7 @@
 /*   By: hyeolee <hyeolee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 19:05:48 by hyeolee           #+#    #+#             */
-/*   Updated: 2021/07/01 22:08:06 by hyeolee          ###   ########.fr       */
+/*   Updated: 2021/07/01 22:30:41 by hyeolee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -236,7 +236,20 @@ void		FragTrap::vaulthunter_dot_exe(std::string const & target)
 	};
 	int rand_num;
 
-	if (this->Energy_points)
-	srand(time(NULL) * rand());
-	rand_num = rand() % 10;
+	if (this->Energy_points >= 25)
+	{
+		srand(time(NULL) * rand());
+		rand_num = rand() % 10;
+		std::cout << skill[rand_num] << "을 사용하였습니다." << std::endl;
+		std::cout << skill_effect[rand_num] << std::endl;
+		std::cout << target << " 50의 데미지를 받았다." << std::endl;
+		if (this->Energy_points - 25 < 0)
+			this->Energy_points = 0;
+		else
+			this->Energy_points -= 25;
+	}
+	else if (this->Energy_points < 25)
+		std::cout << "아 힘빠져.. 기름 줘 기름!!" << std::endl;
+	std::cout << "현재 HP : " << this->Hit_points << std::endl;
+	std::cout << "현재 EP : " << this->Energy_points << std::endl;
 }
