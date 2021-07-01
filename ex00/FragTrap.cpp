@@ -6,7 +6,7 @@
 /*   By: hyeolee <hyeolee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 19:05:48 by hyeolee           #+#    #+#             */
-/*   Updated: 2021/07/01 21:45:08 by hyeolee          ###   ########.fr       */
+/*   Updated: 2021/07/01 22:08:06 by hyeolee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -204,12 +204,39 @@ void		FragTrap::beRepaired(unsigned int amount)
 		this->Hit_points = Max_hit_point;
 	else
 		this->Hit_points += amount;
+	if (this->Energy_points + amount > this->Max_energy_points)
+		this->Energy_points = Max_energy_points;
+	else
+		this->Energy_points += amount;
+
 	std::cout << amount << "만큼의 체력을 회복했다." << std::endl;
+	std::cout << amount << "만큼의 에너지를 회복했다." << std::endl;
 	std::cout << "키야 ~~ 역시 2억 5천만년산 석유가 최고야~!" << std::endl;
 	std::cout << "현재 HP : " << this->Hit_points << std::endl;
+	std::cout << "현재 EP : " << this->Energy_points << std::endl;
 }
 
 void		FragTrap::vaulthunter_dot_exe(std::string const & target)
 {
-	
+	std::string	skill[5] =
+	{
+		"War machine",
+		"Messive fire",
+		"Rocket punch",
+		"Rocket launcher",
+		"Bomber time"
+	};
+	std::string skill_effect[5] =
+	{
+		"앞에 적들을 인식합니다. 요격개시!",
+		"불맛좀 볼래? 메시브 퐈이아~!!!",
+		"내 펀치는 좀 딱딱해, 한번 맞으면 꼼짝도 못할걸?",
+		"로켓 20000발 장전 완료, 적들을 섬멸한다.",
+		"폭탄 설치 완료, 0.0001초 뒤에 폭발합니다."
+	};
+	int rand_num;
+
+	if (this->Energy_points)
+	srand(time(NULL) * rand());
+	rand_num = rand() % 10;
 }

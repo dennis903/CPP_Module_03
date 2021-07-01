@@ -6,7 +6,7 @@
 /*   By: hyeolee <hyeolee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 17:41:36 by hyeolee           #+#    #+#             */
-/*   Updated: 2021/07/01 20:38:44 by hyeolee          ###   ########.fr       */
+/*   Updated: 2021/07/01 21:52:47 by hyeolee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define FRAGTRAP_HPP
 #include <iostream>
 #include <string>
+#include <cstdlib>
+#include <ctime>
 
 class			FragTrap
 {
