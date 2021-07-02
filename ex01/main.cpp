@@ -6,7 +6,7 @@
 /*   By: hyeolee <hyeolee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 22:31:09 by hyeolee           #+#    #+#             */
-/*   Updated: 2021/07/02 19:52:26 by hyeolee          ###   ########.fr       */
+/*   Updated: 2021/07/02 19:56:34 by hyeolee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -216,6 +216,7 @@ void		ScavTrap_basic_command()
 {
 	std::string	command;
 	ScavTrap ScavTrap_basic;
+
 	while (1)
 	{
 		std::cout << "command를 입력하시오 : ";
@@ -249,7 +250,7 @@ void		ScavTrap_basic_command()
 		}
 		else if (command.compare("copy") == 0)
 		{
-			FragTrap copy(ScavTrap_basic);
+			ScavTrap copy(ScavTrap_basic);
 			std::cout << std::endl;
 			std::cout << std::endl;
 		}
@@ -261,14 +262,85 @@ void		ScavTrap_basic_command()
 		}
 		else if (command.compare("skill") == 0)
 		{
-			ScavTrap_basic.vaulthunter_dot_exe("enemy");
+			ScavTrap_basic.challengeNewcomer();
 			std::cout << std::endl;
 			std::cout << std::endl;
 		}
 		else if (command.compare("status") == 0)
 		{
-			std::cout << "현재 HP : " << FragTrap_basic.get_Hit_points() << std::endl;
-			std::cout << "현재 EP : " << FragTrap_basic.get_Energy_points() << std::endl;
+			std::cout << "현재 HP : " << ScavTrap_basic.get_Hit_points() << std::endl;
+			std::cout << "현재 EP : " << ScavTrap_basic.get_Energy_points() << std::endl;
+		}
+		else if (command.compare("exit") == 0)
+		{
+			std::cout << "게임종료" << std::endl;
+			break ;
+		}
+		else if (command.compare("help") == 0)
+			command_manual();
+		else
+			std::cout << "command를 잘못 입력하였습니다." << std::endl;
+	}
+}
+
+void		ScavTrap_appoint_command(std::string name)
+{
+	std::string	command;
+	ScavTrap ScavTrap_appoint(name);
+
+	while (1)
+	{
+		std::cout << "command를 입력하시오 : ";
+		std::getline(std::cin, command);
+		if (std::cin.eof() == true)
+			break ;
+		if (command.compare("exit") == 0)
+			break ;
+		else if (command.compare("ra") == 0)
+		{
+			ScavTrap_appoint.rangeAttack("enemy");
+			std::cout << std::endl;
+			std::cout << std::endl;
+		}
+		else if (command.compare("ma") == 0)
+		{
+			ScavTrap_appoint.meleeAttack("enemy");
+			std::cout << std::endl;
+			std::cout << std::endl;
+		}
+		else if (command.compare("damaged") == 0)
+		{
+			ScavTrap_appoint.takeDamage(10);
+			if (ScavTrap_appoint.get_Hit_points() == 0)
+			{
+				std::cout << "로... 로봇은 죽지 않아요.." << std::endl;
+				break ;
+			}
+			std::cout << std::endl;
+			std::cout << std::endl;
+		}
+		else if (command.compare("copy") == 0)
+		{
+			ScavTrap copy(ScavTrap_appoint);
+			std::cout << std::endl;
+			std::cout << std::endl;
+		}
+		else if (command.compare("repaired") == 0)
+		{
+			ScavTrap_appoint.beRepaired(25);
+			std::cout << std::endl;
+			std::cout << std::endl;
+		}
+		else if (command.compare("skill") == 0)
+		{
+			ScavTrap_appoint.challengeNewcomer();
+			std::cout << std::endl;
+			std::cout << std::endl;
+		}
+		else if (command.compare("status") == 0)
+		{
+			std::cout << "현재 HP : " << ScavTrap_appoint.get_Hit_points() << std::endl;
+			std::cout << "현재 EP : " << ScavTrap_appoint.get_Energy_points() << std::endl;
 		}
 		else if (command.compare("exit") == 0)
 		{
@@ -281,12 +353,6 @@ void		ScavTrap_basic_command()
 			std::cout << "command를 잘못 입력하였습니다." << std::endl;
 	}
 
-	
-}
-
-void		ScavTrap_appoint_command(std::string name)
-{
-	
 }
 
 int			main()
