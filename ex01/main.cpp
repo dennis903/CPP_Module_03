@@ -6,11 +6,12 @@
 /*   By: hyeolee <hyeolee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 22:31:09 by hyeolee           #+#    #+#             */
-/*   Updated: 2021/07/02 19:35:37 by hyeolee          ###   ########.fr       */
+/*   Updated: 2021/07/02 19:52:26 by hyeolee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
 void		change_to_upper(char *str)
 {
@@ -30,17 +31,19 @@ int			select_character(void)
 	std::string		select;
 
 	std::cout << "=========== 게임 시작 ===========" << std::endl;
-	std::cout << "1. FragTrap" << std::endl;
+	std::cout << "1. FragTrap    2. ScavTrap" << std::endl;
 	std::cout << "캐릭터 번호를 입력해주십시오. : ";
 	std::getline(std::cin, select);
 	if (std::cin.eof() == true)
 		exit(-1);
-	if (!(select.compare("1") == 0))
+	if (!(select.compare("1") == 0 || select.compare("2") == 0))
 		std::cout << "삐빅.. 캐릭터 번호가 아닌 다른게 들어왔어요! 자동으로 FragTrap이 선택되셨습니다." << std::endl;
 	std::cout << std::endl;
 	std::cout << std::endl;
 	std::cout << std::endl;
-	return (1);
+	if (select.compare("1") == 0)
+		return (1);
+	return (2);
 }
 
 void		command_manual()
@@ -209,6 +212,83 @@ void		FragTrap_appoint_command(const std::string &select)
 	}	
 }
 
+void		ScavTrap_basic_command()
+{
+	std::string	command;
+	ScavTrap ScavTrap_basic;
+	while (1)
+	{
+		std::cout << "command를 입력하시오 : ";
+		std::getline(std::cin, command);
+		if (std::cin.eof() == true)
+			break ;
+		if (command.compare("exit") == 0)
+			break ;
+		else if (command.compare("ra") == 0)
+		{
+			ScavTrap_basic.rangeAttack("enemy");
+			std::cout << std::endl;
+			std::cout << std::endl;
+		}
+		else if (command.compare("ma") == 0)
+		{
+			ScavTrap_basic.meleeAttack("enemy");
+			std::cout << std::endl;
+			std::cout << std::endl;
+		}
+		else if (command.compare("damaged") == 0)
+		{
+			ScavTrap_basic.takeDamage(10);
+			if (ScavTrap_basic.get_Hit_points() == 0)
+			{
+				std::cout << "로... 로봇은 죽지 않아요.." << std::endl;
+				break ;
+			}
+			std::cout << std::endl;
+			std::cout << std::endl;
+		}
+		else if (command.compare("copy") == 0)
+		{
+			FragTrap copy(ScavTrap_basic);
+			std::cout << std::endl;
+			std::cout << std::endl;
+		}
+		else if (command.compare("repaired") == 0)
+		{
+			ScavTrap_basic.beRepaired(25);
+			std::cout << std::endl;
+			std::cout << std::endl;
+		}
+		else if (command.compare("skill") == 0)
+		{
+			ScavTrap_basic.vaulthunter_dot_exe("enemy");
+			std::cout << std::endl;
+			std::cout << std::endl;
+		}
+		else if (command.compare("status") == 0)
+		{
+			std::cout << "현재 HP : " << FragTrap_basic.get_Hit_points() << std::endl;
+			std::cout << "현재 EP : " << FragTrap_basic.get_Energy_points() << std::endl;
+		}
+		else if (command.compare("exit") == 0)
+		{
+			std::cout << "게임종료" << std::endl;
+			break ;
+		}
+		else if (command.compare("help") == 0)
+			command_manual();
+		else
+			std::cout << "command를 잘못 입력하였습니다." << std::endl;
+	}
+
+	
+}
+
+void		ScavTrap_appoint_command(std::string name)
+{
+	
+}
+
 int			main()
 {
 	int			select;
@@ -231,6 +311,17 @@ int			main()
 				FragTrap_basic_command();
 			else if (!(name.compare("exit") == 0))
 				FragTrap_appoint_command(name);
+			else if (name.compare("exit") == 0)
+				break ;
+			else
+				std::cout << "다시 입력해 주십시오." << std::endl;
+		}
+		else if (select == 2)
+		{
+			if (name.compare("\0") == 0)
+				ScavTrap_basic_command();
+			else if (!(name.compare("exit") == 0))
+				ScavTrap_appoint_command(name);
 			else if (name.compare("exit") == 0)
 				break ;
 			else

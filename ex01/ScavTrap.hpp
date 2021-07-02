@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyeolee <hyeolee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/01 17:41:36 by hyeolee           #+#    #+#             */
-/*   Updated: 2021/07/02 14:45:38 by hyeolee          ###   ########.fr       */
+/*   Created: 2021/07/02 16:27:03 by hyeolee           #+#    #+#             */
+/*   Updated: 2021/07/02 17:22:57 by hyeolee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-# define FRAGTRAP_HPP
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 #include <iostream>
 #include <string>
 #include <cstdlib>
 #include <ctime>
 
-class			FragTrap
+class			ScavTrap
 {
 	private:
 		unsigned int		Hit_points;
@@ -25,16 +25,16 @@ class			FragTrap
 		unsigned int		Energy_points;
 		unsigned int		Max_energy_points;
 		unsigned int		Level;
-		std::string	Name;
+		std::string			Name;
 		unsigned int		Melee_attack_damage;
 		unsigned int		Ranged_attack_damage;
 		unsigned int		Armor_damage_reduction;
 	public:
-		FragTrap();
-		FragTrap(const std::string &name);
-		FragTrap(const FragTrap &_FragTrap);
-		~FragTrap();
-		FragTrap &operator = (const FragTrap &_FragTrap);
+		ScavTrap();
+		ScavTrap(const std::string &name);
+		ScavTrap(const ScavTrap &_ScavTrap);
+		~ScavTrap();
+		ScavTrap &operator = (const ScavTrap &_ScavTrap);
 		void		set_Hit_points(int Hit_points);
 		void		set_Max_hit_point(int Max_hit_point);
 		void		set_Energy_points(int Energy_points);
@@ -57,7 +57,6 @@ class			FragTrap
 		void		meleeAttack(std::string const &target);
 		void		takeDamage(unsigned int amount);
 		void		beRepaired(unsigned int amount);
-		void		vaulthunter_dot_exe(std::string const & target);
-		
+		void		challengeNewcomer(void);
 };
 #endif
