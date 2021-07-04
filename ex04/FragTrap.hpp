@@ -6,14 +6,14 @@
 /*   By: hyeolee <hyeolee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 17:41:36 by hyeolee           #+#    #+#             */
-/*   Updated: 2021/07/04 20:24:12 by hyeolee          ###   ########.fr       */
+/*   Updated: 2021/07/04 23:46:35 by hyeolee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRAGTRAP_HPP
 # define FRAGTRAP_HPP
 # include "ClapTrap.hpp"
-class			FragTrap : public ClapTrap
+class			FragTrap : virtual public ClapTrap
 {
 	private:
 	public:

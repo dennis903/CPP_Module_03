@@ -6,13 +6,14 @@
 /*   By: hyeolee <hyeolee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 22:31:09 by hyeolee           #+#    #+#             */
-/*   Updated: 2021/07/04 22:50:57 by hyeolee          ###   ########.fr       */
+/*   Updated: 2021/07/05 00:09:21 by hyeolee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
 #include "NinjaTrap.hpp"
+#include "SuperTrap.hpp"
 
 int		main()
 {
@@ -25,6 +26,8 @@ int		main()
 	ClapTrap Copy_Clap(Clap);
 	NinjaTrap Ninja("Ninja");
 	NinjaTrap Copy_Ninja(Ninja);
+	SuperTrap Super("Super");
+	SuperTrap Copy_Super(Super);
 
 	std::cout << "==========Frag act===========" << std::endl;
 	Frag.rangeAttack("enemy");
@@ -52,6 +55,9 @@ int		main()
 	Ninja.ninjaShoebox(Ninja);
 	Ninja.ninjaShoebox(Frag);
 	Ninja.ninjaShoebox(Scav);
+	std::cout << "===========Super act=========" << std::endl;
+	Super.rangeAttack("enemy");
+	Super.meleeAttack("enemy");
 	std::cout << "==========Destructor===========" << std::endl;
 	return (0);
 }

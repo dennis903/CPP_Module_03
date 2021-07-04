@@ -6,7 +6,7 @@
 /*   By: hyeolee <hyeolee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 22:58:13 by hyeolee           #+#    #+#             */
-/*   Updated: 2021/07/04 23:27:41 by hyeolee          ###   ########.fr       */
+/*   Updated: 2021/07/05 00:05:50 by hyeolee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,15 @@
 #include "FragTrap.hpp"
 #include "NinjaTrap.hpp"
 
-class SuperTrap : virtual public FragTrap, virtual public NinjaTrap
+class SuperTrap : public FragTrap, public NinjaTrap
 {
 	private:
 	public:
-		
+		SuperTrap();
+		SuperTrap(const std::string &name);
+		SuperTrap(const SuperTrap &SuperTrap);
+		~SuperTrap();
+		SuperTrap &operator = (const SuperTrap &SuperTrap);
+		void	rangedAttack(const std::string target);
+		void	meleeAttack(const std::string target);
 };

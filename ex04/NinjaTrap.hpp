@@ -6,7 +6,7 @@
 /*   By: hyeolee <hyeolee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 21:17:57 by hyeolee           #+#    #+#             */
-/*   Updated: 2021/07/04 22:43:38 by hyeolee          ###   ########.fr       */
+/*   Updated: 2021/07/04 23:46:57 by hyeolee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 # include "ClapTrap.hpp"
 # include "FragTrap.hpp"
 # include "ScavTrap.hpp"
-class NinjaTrap : public ClapTrap
+class NinjaTrap : virtual public ClapTrap
 {
 	private:
 	public:
