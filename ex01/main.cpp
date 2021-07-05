@@ -6,7 +6,7 @@
 /*   By: hyeolee <hyeolee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 22:31:09 by hyeolee           #+#    #+#             */
-/*   Updated: 2021/07/05 14:02:21 by hyeolee          ###   ########.fr       */
+/*   Updated: 2021/07/05 14:34:58 by hyeolee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -362,9 +362,9 @@ int			main()
 	std::string character;
 	std::string command;
 
-	select = select_character();
 	while (1)
 	{
+		select = select_character();
 		std::cout << "이름을 입력해주세요(프로그램을 종료하실려면 exit을 입력해주세요.) : ";
 		std::getline(std::cin, name);
 		if (std::cin.eof() == true)

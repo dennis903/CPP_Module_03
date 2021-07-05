@@ -6,7 +6,7 @@
 /*   By: hyeolee <hyeolee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 22:31:09 by hyeolee           #+#    #+#             */
-/*   Updated: 2021/07/05 14:00:04 by hyeolee          ###   ########.fr       */
+/*   Updated: 2021/07/05 14:43:19 by hyeolee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,19 @@
 int		main()
 {
 	std::cout << "==========Constructor==========" << std::endl;
+	std::cout << "----- Frag constructor -----" << std::endl;
 	FragTrap Frag("Frag");
 	FragTrap Copy_Frag(Frag);
+	std::cout << "----- Scav constructor -----" << std::endl;
 	ScavTrap Scav("Scav");
 	ScavTrap Copy_Scav(Scav);
+	std::cout << "----- Clap constructor -----" << std::endl;
 	ClapTrap Clap("Clap");
 	ClapTrap Copy_Clap(Clap);
+	std::cout << "----- Ninja constructor -----" << std::endl;
 	NinjaTrap Ninja("Ninja");
 	NinjaTrap Copy_Ninja(Ninja);
+	std::cout << "----- Super constructor -----" << std::endl;
 	SuperTrap Super("Super");
 	SuperTrap Copy_Super(Super);
 
