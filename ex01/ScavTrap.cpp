@@ -6,7 +6,7 @@
 /*   By: hyeolee <hyeolee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/02 16:27:01 by hyeolee           #+#    #+#             */
-/*   Updated: 2021/07/02 19:52:22 by hyeolee          ###   ########.fr       */
+/*   Updated: 2021/07/05 13:55:41 by hyeolee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -161,12 +161,11 @@ unsigned int			ScavTrap::get_Armor_damage_reduction() const
 	return (this->Armor_damage_reduction);
 }
 
-void		ScavTrap::rangeAttack(std::string const &target)
+void		ScavTrap::rangedAttack(std::string const &target)
 {
 	std::cout << "아하하 내 샷건 맛이 어떠냐!" << std::endl;
 	std::cout << this->Name << ", " << target << "에 범위공격!" << std::endl;
 	std::cout << this->Ranged_attack_damage << "를 주었다." << std::endl;
-	std::cout << "효과는 굉장했다." << std::endl;
 }
 
 void		ScavTrap::meleeAttack(std::string const &target)
@@ -174,7 +173,6 @@ void		ScavTrap::meleeAttack(std::string const &target)
 	std::cout << "넌 나를 건드리면 안됬어" << std::endl;
 	std::cout << this->Name << ", " << target << "에 무차별 공격!" << std::endl;
 	std::cout << this->Ranged_attack_damage << "를 주었다." << std::endl;
-	std::cout << "효과는 굉장했다." << std::endl;
 }
 
 void		ScavTrap::takeDamage(unsigned int amount)

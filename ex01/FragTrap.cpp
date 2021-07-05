@@ -6,7 +6,7 @@
 /*   By: hyeolee <hyeolee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 19:05:48 by hyeolee           #+#    #+#             */
-/*   Updated: 2021/07/02 17:23:46 by hyeolee          ###   ########.fr       */
+/*   Updated: 2021/07/05 14:02:15 by hyeolee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -173,12 +173,11 @@ unsigned int			FragTrap::get_Armor_damage_reduction() const
 	return (this->Armor_damage_reduction);
 }
 
-void		FragTrap::rangeAttack(std::string const &target)
+void		FragTrap::rangedAttack(std::string const &target)
 {
 	std::cout << "수류탄 투척!" << std::endl;
 	std::cout << this->Name << ", " << target << "에 범위공격!" << std::endl;
 	std::cout << this->Ranged_attack_damage << "를 주었다." << std::endl;
-	std::cout << "효과는 굉장했다." << std::endl;
 }
 
 void		FragTrap::meleeAttack(std::string const &target)
@@ -186,7 +185,6 @@ void		FragTrap::meleeAttack(std::string const &target)
 	std::cout << "Hyah!!!" << std::endl;
 	std::cout << this->Name << ", " << target << "에 무차별 공격!" << std::endl;
 	std::cout << this->Ranged_attack_damage << "를 주었다." << std::endl;
-	std::cout << "효과는 굉장했다." << std::endl;
 }
 
 void		FragTrap::takeDamage(unsigned int amount)

@@ -6,7 +6,7 @@
 /*   By: hyeolee <hyeolee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 21:18:13 by hyeolee           #+#    #+#             */
-/*   Updated: 2021/07/04 22:52:49 by hyeolee          ###   ########.fr       */
+/*   Updated: 2021/07/05 14:01:48 by hyeolee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,17 @@ NinjaTrap&	NinjaTrap::operator = (const NinjaTrap &NinjaTrap)
 	return (*this);
 }
 
+void	NinjaTrap::rangedAttack(std::string const & target)
+{
+	std::cout << "why so serious" << std::endl;
+	ClapTrap::rangedAttack(target);
+}
+
+void	NinjaTrap::meleeAttack(std::string const & target)
+{
+	std::cout << "Die die die!!!" << std::endl;
+	ClapTrap::meleeAttack(target);
+}
 void	NinjaTrap::ninjaShoebox(const ClapTrap &ClapTrap)
 {
 	std::cout << this->Name << "이(가) " << "ClapTrap" << "(" << ClapTrap.get_Name() << ")을 공격했다." << std::endl;

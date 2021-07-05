@@ -6,7 +6,7 @@
 /*   By: hyeolee <hyeolee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 21:17:57 by hyeolee           #+#    #+#             */
-/*   Updated: 2021/07/04 23:46:57 by hyeolee          ###   ########.fr       */
+/*   Updated: 2021/07/05 14:00:15 by hyeolee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ class NinjaTrap : virtual public ClapTrap
 		NinjaTrap(const NinjaTrap & _NinjaTrap);
 		~NinjaTrap();
 		NinjaTrap &operator = (const NinjaTrap &NinjaTrap);
+		void	rangedAttack(std::string const & target);
+		void	meleeAttack(std::string const & target);
 		void	ninjaShoebox(const ClapTrap &ClapTrap);
 		void	ninjaShoebox(const NinjaTrap &NinjaTrap);
 		void	ninjaShoebox(FragTrap &FragTrap);

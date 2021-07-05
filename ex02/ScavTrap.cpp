@@ -6,13 +6,13 @@
 /*   By: hyeolee <hyeolee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/02 16:27:01 by hyeolee           #+#    #+#             */
-/*   Updated: 2021/07/04 20:27:21 by hyeolee          ###   ########.fr       */
+/*   Updated: 2021/07/05 14:02:27 by hyeolee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap()
+ScavTrap::ScavTrap() : ClapTrap()
 {
 	std::cout << "짜잔! ScavTrap 나가신다~!" << std::endl;
 	this->Hit_points = 100;
@@ -27,7 +27,7 @@ ScavTrap::ScavTrap()
 	std::cout << this->Name << "을 선택하셨습니다." << std::endl;
 }
 
-ScavTrap::ScavTrap(const std::string &name)
+ScavTrap::ScavTrap(const std::string &name) : ClapTrap(name)
 {
 	std::cout << "짜잔! ScavTrap 나가신다~!" << std::endl;
 	this->Hit_points = 100;
@@ -69,6 +69,18 @@ ScavTrap& ScavTrap::operator = (const ScavTrap &_ScavTrap)
 	this->Ranged_attack_damage = _ScavTrap.Ranged_attack_damage;
 	this->Armor_damage_reduction = _ScavTrap.Armor_damage_reduction;
 	return (*this);
+}
+
+void		ScavTrap::rangedAttack(std::string const &target)
+{
+	std::cout << "아하하 내 샷건 맛이 어떠냐!" << std::endl;
+	ClapTrap::rangedAttack(target);
+}
+
+void		ScavTrap::meleeAttack(std::string const &target)
+{
+	std::cout << "넌 나를 건드리면 안됬어" << std::endl;
+	ClapTrap::meleeAttack(target);
 }
 
 void		ScavTrap::challengeNewcomer(void)

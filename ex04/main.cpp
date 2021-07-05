@@ -6,7 +6,7 @@
 /*   By: hyeolee <hyeolee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 22:31:09 by hyeolee           #+#    #+#             */
-/*   Updated: 2021/07/05 00:09:21 by hyeolee          ###   ########.fr       */
+/*   Updated: 2021/07/05 14:00:04 by hyeolee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,24 +30,24 @@ int		main()
 	SuperTrap Copy_Super(Super);
 
 	std::cout << "==========Frag act===========" << std::endl;
-	Frag.rangeAttack("enemy");
+	Frag.rangedAttack("enemy");
 	Frag.meleeAttack("enemy");
 	Frag.takeDamage(30);
 	Frag.beRepaired(50);
 	Frag.vaulthunter_dot_exe("enemy");
 	std::cout << "==========Scav act===========" << std::endl;
-	Scav.rangeAttack("enemy");
+	Scav.rangedAttack("enemy");
 	Scav.meleeAttack("enemy");
 	Scav.takeDamage(30);
 	Scav.beRepaired(50);
 	Scav.challengeNewcomer();
 	std::cout << "==========Clap act===========" << std::endl;
-	Clap.rangeAttack("enemy");
+	Clap.rangedAttack("enemy");
 	Clap.meleeAttack("enemy");
 	Clap.takeDamage(30);
 	Clap.beRepaired(50);
 	std::cout << "==========Ninja act==========" << std::endl;
-	Ninja.rangeAttack("enemy");
+	Ninja.rangedAttack("enemy");
 	Ninja.meleeAttack("enemy");
 	Ninja.takeDamage(30);
 	Ninja.beRepaired(50);
@@ -56,7 +56,7 @@ int		main()
 	Ninja.ninjaShoebox(Frag);
 	Ninja.ninjaShoebox(Scav);
 	std::cout << "===========Super act=========" << std::endl;
-	Super.rangeAttack("enemy");
+	Super.rangedAttack("enemy");
 	Super.meleeAttack("enemy");
 	std::cout << "==========Destructor===========" << std::endl;
 	return (0);

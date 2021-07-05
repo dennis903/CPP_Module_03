@@ -6,7 +6,7 @@
 /*   By: hyeolee <hyeolee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 20:05:41 by hyeolee           #+#    #+#             */
-/*   Updated: 2021/07/04 20:25:13 by hyeolee          ###   ########.fr       */
+/*   Updated: 2021/07/05 14:01:56 by hyeolee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ class	ClapTrap
 		unsigned int			get_Melee_attack_damage() const;
 		unsigned int			get_Ranged_attack_damage() const;
 		unsigned int			get_Armor_damage_reduction() const;
-		void					rangeAttack(std::string const &target);
+		void					rangedAttack(std::string const &target);
 		void					meleeAttack(std::string const &target);
 		void					takeDamage(unsigned int amount);
 		void					beRepaired(unsigned int amount);

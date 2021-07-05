@@ -6,7 +6,7 @@
 /*   By: hyeolee <hyeolee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/02 16:27:03 by hyeolee           #+#    #+#             */
-/*   Updated: 2021/07/04 20:27:03 by hyeolee          ###   ########.fr       */
+/*   Updated: 2021/07/05 14:00:20 by hyeolee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,7 @@ class			ScavTrap : public ClapTrap
 		~ScavTrap();
 		ScavTrap &operator = (const ScavTrap &_ScavTrap);
 		void		challengeNewcomer(void);
+		void		rangedAttack(std::string const & target);
+		void		meleeAttack(std::string const & target);
 };
 #endif

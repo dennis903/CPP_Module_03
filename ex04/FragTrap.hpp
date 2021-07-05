@@ -6,7 +6,7 @@
 /*   By: hyeolee <hyeolee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 17:41:36 by hyeolee           #+#    #+#             */
-/*   Updated: 2021/07/04 23:46:35 by hyeolee          ###   ########.fr       */
+/*   Updated: 2021/07/05 14:02:11 by hyeolee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ class			FragTrap : virtual public ClapTrap
 		FragTrap(const FragTrap &_FragTrap);
 		~FragTrap();
 		FragTrap &operator = (const FragTrap &_FragTrap);
+		void		rangedAttack(std::string const & target);
+		void		meleeAttack(std::string const & target);
 		void		vaulthunter_dot_exe(std::string const & target);
 };
 #endif

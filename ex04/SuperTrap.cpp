@@ -6,13 +6,13 @@
 /*   By: hyeolee <hyeolee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 23:38:06 by hyeolee           #+#    #+#             */
-/*   Updated: 2021/07/05 00:09:08 by hyeolee          ###   ########.fr       */
+/*   Updated: 2021/07/05 14:00:39 by hyeolee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "SuperTrap.hpp"
 
-SuperTrap::SuperTrap()// : ClapTrap(), FragTrap(), NinjaTrap()
+SuperTrap::SuperTrap() : ClapTrap(), FragTrap(), NinjaTrap()
 {
 	this->Hit_points = FragTrap::get_Hit_points();
 	this->Max_hit_point = FragTrap::get_Max_hit_point();
@@ -26,7 +26,7 @@ SuperTrap::SuperTrap()// : ClapTrap(), FragTrap(), NinjaTrap()
 	std::cout << "Super... SuperTrap 전투준비 완료" << std::endl;
 }
 
-SuperTrap::SuperTrap(const std::string &name)// : ClapTrap(name), FragTrap(name), NinjaTrap(name)
+SuperTrap::SuperTrap(const std::string &name) : ClapTrap(name), FragTrap(name), NinjaTrap(name)
 {
 	this->Hit_points = FragTrap::get_Hit_points();
 	this->Max_hit_point = FragTrap::get_Max_hit_point();
@@ -71,11 +71,11 @@ SuperTrap & SuperTrap::operator = (const SuperTrap &SuperTrap)
 void	SuperTrap::rangedAttack(const std::string target)
 {
 	std::cout << "FragTrap 합체!!" << std::endl;
-	FragTrap::rangeAttack(target);
+	FragTrap::rangedAttack(target);
 }
 
 void	SuperTrap::meleeAttack(const std::string target)
 {
 	std::cout << "NinjaTrap 합체!!" << std::endl;
-	NinjaTrap::rangeAttack(target);
+	NinjaTrap::rangedAttack(target);
 }

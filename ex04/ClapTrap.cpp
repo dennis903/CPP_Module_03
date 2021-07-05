@@ -6,7 +6,7 @@
 /*   By: hyeolee <hyeolee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 20:05:36 by hyeolee           #+#    #+#             */
-/*   Updated: 2021/07/04 21:14:41 by hyeolee          ###   ########.fr       */
+/*   Updated: 2021/07/05 14:01:57 by hyeolee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -158,7 +158,7 @@ unsigned int			ClapTrap::get_Armor_damage_reduction() const
 	return (this->Armor_damage_reduction);
 }
 
-void		ClapTrap::rangeAttack(std::string const &target)
+void		ClapTrap::rangedAttack(std::string const &target)
 {
 	std::cout << "수류탄 투척!" << std::endl;
 	std::cout << this->Name << ", " << target << "에 범위공격!" << std::endl;

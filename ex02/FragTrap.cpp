@@ -6,13 +6,13 @@
 /*   By: hyeolee <hyeolee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 19:05:48 by hyeolee           #+#    #+#             */
-/*   Updated: 2021/07/04 20:36:13 by hyeolee          ###   ########.fr       */
+/*   Updated: 2021/07/05 14:02:12 by hyeolee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap()
+FragTrap::FragTrap() : ClapTrap()
 {
 	std::cout << "날 선택했단 말이야?" << std::endl;
 	std::cout << "이번엔 진짜 재밌을거야, 내가 약속해!" << std::endl;
@@ -28,7 +28,7 @@ FragTrap::FragTrap()
 	std::cout << this->Name << "을 선택하셨습니다." << std::endl;
 }
 
-FragTrap::FragTrap(const std::string &name)
+FragTrap::FragTrap(const std::string &name) : ClapTrap(name)
 {
 	std::cout << "날 선택했단 말이야?" << std::endl;
 	std::cout << "이번엔 진짜 재밌을거야, 내가 약속해!" << std::endl;
@@ -119,4 +119,16 @@ void		FragTrap::vaulthunter_dot_exe(std::string const & target)
 		std::cout << "아 힘빠져.. 기름 줘 기름!!" << std::endl;
 	std::cout << "현재 HP : " << this->Hit_points << std::endl;
 	std::cout << "현재 EP : " << this->Energy_points << std::endl;
+}
+
+void		FragTrap::rangedAttack(std::string const &target)
+{
+	std::cout << "수류탄 투척!" << std::endl;
+	ClapTrap::rangedAttack(target);
+}
+
+void		FragTrap::meleeAttack(std::string const &target)
+{
+	std::cout << "Hyah!!!" << std::endl;
+	ClapTrap::meleeAttack(target);
 }

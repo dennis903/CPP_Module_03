@@ -6,7 +6,7 @@
 /*   By: hyeolee <hyeolee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 19:05:48 by hyeolee           #+#    #+#             */
-/*   Updated: 2021/07/04 21:15:08 by hyeolee          ###   ########.fr       */
+/*   Updated: 2021/07/05 14:01:45 by hyeolee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,18 @@ FragTrap& FragTrap::operator = (const FragTrap &_FragTrap)
 	this->Ranged_attack_damage = _FragTrap.Ranged_attack_damage;
 	this->Armor_damage_reduction = _FragTrap.Armor_damage_reduction;
 	return (*this);
+}
+
+void		FragTrap::rangedAttack(std::string const &target)
+{
+	std::cout << "수류탄 투척!" << std::endl;
+	ClapTrap::rangedAttack(target);
+}
+
+void		FragTrap::meleeAttack(std::string const &target)
+{
+	std::cout << "Hyah!!!" << std::endl;
+	ClapTrap::meleeAttack(target);
 }
 
 void		FragTrap::vaulthunter_dot_exe(std::string const & target)

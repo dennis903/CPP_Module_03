@@ -6,7 +6,7 @@
 /*   By: hyeolee <hyeolee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 22:31:09 by hyeolee           #+#    #+#             */
-/*   Updated: 2021/07/02 19:56:34 by hyeolee          ###   ########.fr       */
+/*   Updated: 2021/07/05 14:02:21 by hyeolee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ void		FragTrap_basic_command(void)
 			break ;
 		else if (command.compare("ra") == 0)
 		{
-			FragTrap_basic.rangeAttack("enemy");
+			FragTrap_basic.rangedAttack("enemy");
 			std::cout << std::endl;
 			std::cout << std::endl;
 		}
@@ -154,7 +154,7 @@ void		FragTrap_appoint_command(const std::string &select)
 			break ;
 		else if (command.compare("ra") == 0)
 		{
-			FragTrap_appoint.rangeAttack("enemy");
+			FragTrap_appoint.rangedAttack("enemy");
 			std::cout << std::endl;
 			std::cout << std::endl;
 		}
@@ -227,7 +227,7 @@ void		ScavTrap_basic_command()
 			break ;
 		else if (command.compare("ra") == 0)
 		{
-			ScavTrap_basic.rangeAttack("enemy");
+			ScavTrap_basic.rangedAttack("enemy");
 			std::cout << std::endl;
 			std::cout << std::endl;
 		}
@@ -298,7 +298,7 @@ void		ScavTrap_appoint_command(std::string name)
 			break ;
 		else if (command.compare("ra") == 0)
 		{
-			ScavTrap_appoint.rangeAttack("enemy");
+			ScavTrap_appoint.rangedAttack("enemy");
 			std::cout << std::endl;
 			std::cout << std::endl;
 		}

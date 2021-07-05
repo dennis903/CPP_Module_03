@@ -6,7 +6,7 @@
 /*   By: hyeolee <hyeolee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 21:18:13 by hyeolee           #+#    #+#             */
-/*   Updated: 2021/07/04 22:52:49 by hyeolee          ###   ########.fr       */
+/*   Updated: 2021/07/05 13:59:08 by hyeolee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,18 @@ NinjaTrap&	NinjaTrap::operator = (const NinjaTrap &NinjaTrap)
 	this->Armor_damage_reduction = NinjaTrap.Armor_damage_reduction;
 	std::cout << "NinjaTrap 암살할 준비 끝.." << std::endl;
 	return (*this);
+}
+
+void	NinjaTrap::rangedAttack(std::string const & target)
+{
+	std::cout << "why so serious" << std::endl;
+	ClapTrap::rangedAttack(target);
+}
+
+void	NinjaTrap::meleeAttack(std::string const & target)
+{
+	std::cout << "Die die die!!!" << std::endl;
+	ClapTrap::meleeAttack(target);
 }
 
 void	NinjaTrap::ninjaShoebox(const ClapTrap &ClapTrap)

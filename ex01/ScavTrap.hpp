@@ -6,7 +6,7 @@
 /*   By: hyeolee <hyeolee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/02 16:27:03 by hyeolee           #+#    #+#             */
-/*   Updated: 2021/07/02 17:22:57 by hyeolee          ###   ########.fr       */
+/*   Updated: 2021/07/05 13:55:48 by hyeolee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ class			ScavTrap
 		unsigned int			get_Melee_attack_damage() const;
 		unsigned int			get_Ranged_attack_damage() const;
 		unsigned int			get_Armor_damage_reduction() const;
-		void		rangeAttack(std::string const &target);
+		void		rangedAttack(std::string const &target);
 		void		meleeAttack(std::string const &target);
 		void		takeDamage(unsigned int amount);
 		void		beRepaired(unsigned int amount);

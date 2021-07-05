@@ -6,7 +6,7 @@
 /*   By: hyeolee <hyeolee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 20:05:36 by hyeolee           #+#    #+#             */
-/*   Updated: 2021/07/04 20:45:43 by hyeolee          ###   ########.fr       */
+/*   Updated: 2021/07/05 14:01:55 by hyeolee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,29 @@
 ClapTrap::ClapTrap()
 {
 	std::cout << "ClapTrap constructor called" << std::endl;
+	this->Hit_points = 100;
+	this->Max_hit_point = 100;
+	this->Energy_points = 100;
+	this->Max_energy_points = 100;
+	this->Level = 1;
+	this->Name = "ClapTrap";
+	this->Melee_attack_damage = 30;
+	this->Ranged_attack_damage = 20;
+	this->Armor_damage_reduction = 5;
+}
+
+ClapTrap::ClapTrap(const std::string & name)
+{
+	std::cout << "ClapTrap constructor called" << std::endl;
+	this->Hit_points = 100;
+	this->Max_hit_point = 100;
+	this->Energy_points = 100;
+	this->Max_energy_points = 100;
+	this->Level = 1;
+	this->Name = name;
+	this->Melee_attack_damage = 30;
+	this->Ranged_attack_damage = 20;
+	this->Armor_damage_reduction = 5;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &_ClapTrap)
@@ -135,22 +158,21 @@ unsigned int			ClapTrap::get_Armor_damage_reduction() const
 	return (this->Armor_damage_reduction);
 }
 
-void		ClapTrap::rangeAttack(std::string const &target)
+void		ClapTrap::rangedAttack(std::string const &target)
 {
-	std::cout << "수류탄 투척!" << std::endl;
 	std::cout << this->Name << ", " << target << "에 범위공격!" << std::endl;
 	std::cout << this->Ranged_attack_damage << "를 주었다." << std::endl;
 }
 
 void		ClapTrap::meleeAttack(std::string const &target)
 {
-	std::cout << "Hyah!!!" << std::endl;
 	std::cout << this->Name << ", " << target << "에 무차별 공격!" << std::endl;
 	std::cout << this->Ranged_attack_damage << "를 주었다." << std::endl;
 }
 
 void		ClapTrap::takeDamage(unsigned int amount)
 {
+	std::cout << "We are under attack" << std::endl;
 	if (this->Hit_points - amount + this->Armor_damage_reduction <= 0)
 		this->Hit_points = 0;
 	else
@@ -165,6 +187,7 @@ void		ClapTrap::takeDamage(unsigned int amount)
 
 void		ClapTrap::beRepaired(unsigned int amount)
 {
+	std::cout << "healing.." << std::endl;
 	if (this->Hit_points + amount > this->Max_hit_point)
 		this->Hit_points = Max_hit_point;
 	else
